@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,6 @@ use App\Http\Controllers\MahasiswaController;
 // });
 
 Route::resource('mahasiswa', MahasiswaController::class);
+Route::get('/index/search', [SearchController::class, 'search'])->name('index.search');
 
 

@@ -8,10 +8,19 @@
             </div>
             <div class="float-right my-2">
                 <a class="btn btn-success" href="{{ route('mahasiswa.create') }}"> Input Mahasiswa</a>
-            </div>
+            </div>   
         </div>
     </div>
-
+    <div class="row justify-content-end">
+        <div class="col-md-6">
+            <form action="{{ url('/index/search') }}" method="GET">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search here" name="cari" id="search">
+                        <button type="submit" class="btn btn-dark">Search</button>
+                    </div>
+            </form>
+        </div>
+    </div>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
