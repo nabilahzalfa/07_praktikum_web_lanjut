@@ -53,4 +53,9 @@
         </tr>
     @endforeach
     </table>
+    <div class="row justify-content-center mt-5">
+            <div class="col-auto">
+                {{ $mahasiswa->links() }}
+            </div>
+        </div>
 @endsection
