@@ -33,23 +33,23 @@
                 </div>
                 <div class="form-group">
                     <label for="Kelas">Kelas</label>
-                    <input type="Kelas" name="kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas }}" ariadescribedby="Kelas" >
+                    <input type="text" name="kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas }}" ariadescribedby="Kelas" >
                 </div>
                 <div class="form-group">
                     <label for="Jurusan">Jurusan</label>
-                    <input type="Jurusan" name="jurusan" class="form-control" id="Jurusan" value="{{ $Mahasiswa->jurusan }}" ariadescribedby="Jurusan" >
+                    <input type="text" name="jurusan" class="form-control" id="Jurusan" value="{{ $Mahasiswa->jurusan }}" ariadescribedby="Jurusan" >
                 </div>
                 <div class="form-group">
                     <label for="Email">Email</label>
-                    <input type="Email" name="email" class="form-control" id="Email" value="{{ $Mahasiswa->email }}" ariadescribedby="Email" >
+                    <input type="email" name="email" class="form-control" id="Email" value="{{ $Mahasiswa->email }}" ariadescribedby="Email" >
                 </div>
                 <div class="form-group">
                     <label for="Alamat">Alamat</label>
-                    <input type="Alamat" name="alamat" class="form-control" id="alamat" value="{{ $Mahasiswa->alamat }}" ariadescribedby="Alamat" >
+                    <input type="alamat" name="alamat" class="form-control" id="alamat" value="{{ $Mahasiswa->alamat }}" ariadescribedby="Alamat" >
                 </div>
                 <div class="form-group">
                     <label for="Tanggal_Lahir">Tanggal Lahir</label>
-                    <input type="Tanggal_Lahir" name="tanggal_lahir" class="form-control" id="Tanggal_Lahir" value="{{ $Mahasiswa->tanggal_lahir }}" ariadescribedby="Tanggal_lahir" >
+                    <input type="date" name="tanggal_lahir" class="form-control" id="Tanggal_Lahir" value="{{ $Mahasiswa->tanggal_lahir }}" ariadescribedby="Tanggal_lahir" >
                 </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>

@@ -46,7 +46,7 @@
             <td>{{ $mhs->jurusan }}</td>
             <td>{{ $mhs->email }}</td>
             <td>{{ $mhs->alamat }}</td>
-            <td>{{ $mhs->tanggal_lahir }}</td>
+            <td>{{ Carbon\Carbon::parse($mhs ->tanggal_lahir)->format('d-m-Y') }}</td>
             <td>
             <form action="{{ route('mahasiswa.destroy',['mahasiswa'=>$mhs->nim]) }}" method="POST">
 
