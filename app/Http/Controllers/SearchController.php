@@ -13,7 +13,7 @@ class SearchController extends Controller
 
         $mahasiswa = Mahasiswa::where('nama', 'like', '%' . $keyword . '%')->paginate(3);
         return view('mahasiswa.index',[
-            'mahasiswa' => $mahasiswa
+            'paginate' => $mahasiswa
         ]);
     }
 }
