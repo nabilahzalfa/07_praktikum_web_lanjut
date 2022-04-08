@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use App\Models\Kelas;
+use App\Models\Mahasiswa_Matakuliah;
+use App\Models\Matakuliah;
 use DB;
 use Illuminate\Http\Request;
 
@@ -99,7 +101,6 @@ class MahasiswaController extends Controller
         // $Mahasiswa = Mahasiswa::find($Nim);
         // return view('mahasiswa.detail', compact('Mahasiswa'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -168,5 +169,11 @@ class MahasiswaController extends Controller
         Mahasiswa::find($Nim)->delete();
         return redirect()->route('mahasiswa.index')
         -> with('success', 'Mahasiswa Berhasil Dihapus');
+    }
+    public function khs($id)
+    {
+        $daftar = Mahasiswa_MataKuliah::with("matakuliah")->where("mahasiswa_id", $id)->get();
+        $daftar->mahasiswa = Mahasiswa::with('kelas')->where('id_mahasiswa', $id)->first();
+        return view('mahasiswa.khs', compact('daftar'));
     }
 }

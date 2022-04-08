@@ -57,7 +57,9 @@
                 @method('DELETE')
                 
                 <button type="submit" class="btn btn-danger">Delete</button>
+                    
             </form>
+            <a class="btn btn-warning" href="{{ route('khs',$mhs->id_mahasiswa) }}">Nilai</a>
             </td>
         </tr>
     @endforeach
@@ -66,5 +68,5 @@
             <div class="col-auto">
                 {{ $paginate->links() }}
             </div>
-        </div>
+    </div>
 @endsection
