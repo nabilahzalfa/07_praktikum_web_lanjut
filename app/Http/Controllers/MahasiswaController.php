@@ -188,7 +188,7 @@ class MahasiswaController extends Controller
         $daftar->mahasiswa = Mahasiswa::with('kelas')->where('nim', $Nim)->first();
         return view('mahasiswa.khs', compact('daftar'));
     }
-
+    
     public function cetak_khs($Nim)
     {
         $daftar = Mahasiswa_MataKuliah::with("matakuliah")->where("mahasiswa_id", $Nim)->get();

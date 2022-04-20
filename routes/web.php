@@ -28,3 +28,4 @@ Route::get('/index/search', [SearchController::class, 'search'])->name('index.se
 Route::get('mahasiswa/cetak_pdf/{nim}', [MahasiswaController::class, 'cetak_khs'])->name('cetak_khs');
 
 
+

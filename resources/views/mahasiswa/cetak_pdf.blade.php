@@ -17,9 +17,9 @@
 
         <br><br>
         <ul class="" style="list-style-type: none;">
-                    <li class=""><b>Nama: </b>{{$daftar->mahasiswa->nama}}</li>
-                    <li class=""><b>Nim: </b>{{$daftar->mahasiswa->nim}}</li>
-                    <li class=""><b>Kelas: </b>{{$daftar->mahasiswa->kelas->nama_kelas}}</li>
+            <li class=""><b>Nama: </b>{{$daftar->mahasiswa->nama}}</li>
+            <li class=""><b>Nim: </b>{{$daftar->mahasiswa->nim}}</li>
+            <li class=""><b>Kelas: </b>{{$daftar->mahasiswa->kelas->nama_kelas}}</li>
         </ul>
         <br>
         <table class='table table-bordered'>
