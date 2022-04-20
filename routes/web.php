@@ -21,7 +21,7 @@ use App\Http\Controllers\SearchController;
 
 Route::resource('mahasiswa', MahasiswaController::class);
 
-Route::get('khs/{id}', [MahasiswaController::class, 'khs'])->name('khs');
+Route::get('khs/{nim}', [MahasiswaController::class, 'khs'])->name('khs');
 
 Route::get('/index/search', [SearchController::class, 'search'])->name('index.search');
 

@@ -59,7 +59,7 @@
                 <button type="submit" class="btn btn-danger">Delete</button>
                     
             </form>
-            <a class="btn btn-warning" href="{{ route('khs',$mhs->id_mahasiswa) }}">Nilai</a>
+            <a class="btn btn-warning" href="{{ route('khs',$mhs->nim) }}">Nilai</a>
             </td>
         </tr>
     @endforeach

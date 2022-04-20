@@ -25,7 +25,7 @@ class MahasiswaController extends Controller
 
         //yang semula Mahasiswa::all, diubah menjadi with() yang menyatakan realasi
         $mahasiswa = Mahasiswa::with('kelas')->get();
-        $paginate = Mahasiswa::orderBy('id_mahasiswa', 'asc')->paginate(3);
+        $paginate = Mahasiswa::orderBy('nim', 'asc')->paginate(3);
         return view('mahasiswa.index', ['mahasiswa' => $mahasiswa, 'paginate' => $paginate]);
 
     }
@@ -170,10 +170,10 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.index')
         -> with('success', 'Mahasiswa Berhasil Dihapus');
     }
-    public function khs($id)
+    public function khs($Nim)
     {
-        $daftar = Mahasiswa_MataKuliah::with("matakuliah")->where("mahasiswa_id", $id)->get();
-        $daftar->mahasiswa = Mahasiswa::with('kelas')->where('id_mahasiswa', $id)->first();
+        $daftar = Mahasiswa_MataKuliah::with("matakuliah")->where("mahasiswa_id", $Nim)->get();
+        $daftar->mahasiswa = Mahasiswa::with('kelas')->where('nim', $Nim)->first();
         return view('mahasiswa.khs', compact('daftar'));
     }
 }
