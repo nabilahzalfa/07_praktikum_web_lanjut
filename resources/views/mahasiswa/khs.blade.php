@@ -48,6 +48,7 @@
         </table>
         </div>
                     <a class="btn btn-success mt-3" href="{{ route('mahasiswa.index') }}">Kembali</a>
+                    <a class="btn btn-danger mt-3" href="{{ route('cetak_khs', $daftar->mahasiswa->nim) }}"> Cetak Ke PDF</a>
             </div>
     </div>
 </div>

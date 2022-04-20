@@ -7,6 +7,7 @@ use App\Models\Mahasiswa_Matakuliah;
 use App\Models\Matakuliah;
 use DB;
 use Illuminate\Http\Request;
+use PDF;
 
 class MahasiswaController extends Controller
 {
@@ -180,10 +181,19 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.index')
         -> with('success', 'Mahasiswa Berhasil Dihapus');
     }
+
     public function khs($Nim)
     {
         $daftar = Mahasiswa_MataKuliah::with("matakuliah")->where("mahasiswa_id", $Nim)->get();
         $daftar->mahasiswa = Mahasiswa::with('kelas')->where('nim', $Nim)->first();
         return view('mahasiswa.khs', compact('daftar'));
+    }
+
+    public function cetak_khs($Nim)
+    {
+        $daftar = Mahasiswa_MataKuliah::with("matakuliah")->where("mahasiswa_id", $Nim)->get();
+        $daftar->mahasiswa = Mahasiswa::with('kelas')->where("nim", $Nim)->first();
+        $pdf = PDF::loadview('mahasiswa.cetak_pdf', compact('daftar'));
+        return $pdf->stream();
     }
 }
