@@ -20,7 +20,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="post" action="{{ route('mahasiswa.store') }}" id="myForm">
+            <form method="post" action="{{ route('mahasiswa.store') }}" id="myForm" enctype="multipart/form-data">
             @csrf
                 <div class="form-group">
                     <label for="Nim">Nim</label>
@@ -29,6 +29,10 @@
                 <div class="form-group">
                     <label for="Nama">Nama</label>
                     <input type="text" name="nama" class="form-control" id="Nama" aria-describedby="Nama" >
+                </div>
+                <div class="form-group">
+                    <label for="Foto">Foto</label>
+                    <input type="file" name="foto" class="form-control" id="Foto" aria-describedby="Foto" >
                 </div>
                 <div class="form-group">
                     <label for="Kelas">Kelas</label>
